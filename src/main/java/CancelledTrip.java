@@ -1,3 +1,5 @@
+import java.time.temporal.ChronoUnit;
+
 public class CancelledTrip extends Trip {
 
     private Tap tapOff;
@@ -6,8 +8,16 @@ public class CancelledTrip extends Trip {
     public CancelledTrip(Tap tapOn, Tap tapOff) {
         super(tapOn);
         this.tapOff = tapOff;
-        cost = CANCELLED_TRIP_COST;
-
+        started = tapOn.getDateTimeUTC();
+        finished = tapOff.getDateTimeUTC();
+        fromStopId = tapOn.getStopId();
+        toStopId = tapOff.getStopId();
+        tripDuration = ChronoUnit.SECONDS.between(tapOn.getDateTimeUTC(), tapOff.getDateTimeUTC());
+        chargeAmount = CANCELLED_TRIP_COST;
+        companyId = tapOn.getCompanyId();
+        busId = tapOn.getBusId();
+        PAN = tapOn.getPan();
+        status = Status.CANCELLED;
     }
 
     public Tap getTapOff() {
@@ -16,9 +26,17 @@ public class CancelledTrip extends Trip {
 
     @Override
     public String toString() {
-        return "CancelledTrip{" +
-                "tapOff=" + tapOff +
-                ", CANCELLED_TRIP_COST=" + CANCELLED_TRIP_COST +
+        return "Cancelled Trip{" +
+                "Started=" + tapOn.getDateTimeUTC() +
+                ", Finished=" + tapOff.getDateTimeUTC() +
+                ", DurationSecs=" + tripDuration +
+                ", FromStopId=" + tapOn.getStopId() +
+                ", ToStopId=" + tapOn.getStopId() +
+                ", ChargeAmount=" + chargeAmount +
+                ", CompanyId=" + tapOn.getCompanyId() +
+                ", BusID=" + tapOn.getBusId() +
+                ", PAN=" + tapOn.getPan() +
+                ", Status=" + this.status +
                 '}';
     }
 }

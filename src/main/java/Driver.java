@@ -1,3 +1,6 @@
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+
 import java.io.IOException;
 import java.util.*;
 
@@ -20,10 +23,10 @@ public class Driver {
                     completedTaps.put(cancel.getTapOn().getId(), cancel.getTapOn());
                     completedTaps.put(cancel.getTapOff().getId(), cancel.getTapOff());
                 } else {
-                    CompletedTrip ct = new CompletedTrip(activeTaps.get(t.getPan()), t);
-                    finishedTrips.add(ct);
-                    completedTaps.put(ct.getTapOn().getId(), ct.getTapOn());
-                    completedTaps.put(ct.getTapOff().getId(), ct.getTapOff());
+                    CompletedTrip complete = new CompletedTrip(activeTaps.get(t.getPan()), t);
+                    finishedTrips.add(complete);
+                    completedTaps.put(complete.getTapOn().getId(), complete.getTapOn());
+                    completedTaps.put(complete.getTapOff().getId(), complete.getTapOff());
                 }
                 activeTaps.clear();
             }
@@ -37,21 +40,19 @@ public class Driver {
             }
         }
 
-        for (Trip ft : finishedTrips) {
-            System.out.println(ft);
-        }
-
-
     }
 
-    private void run() throws IOException {
+    private void run() throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
 
         ArrayList<Tap> mainTaps = CSVReadWrite.readCSVtoBean();
         Collections.sort(mainTaps);
         tripCalculate(mainTaps);
+        Collections.sort(finishedTrips);
+        CSVReadWrite.writeListToCsv(finishedTrips);
+
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CsvRequiredFieldEmptyException, CsvDataTypeMismatchException {
         Driver dr = new Driver();
         dr.run();
     }
