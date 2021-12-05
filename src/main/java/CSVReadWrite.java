@@ -14,6 +14,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author michaelblake 2021
+ *
+ * A class which uses the opencsv library to handle reading/writing csv files
+ */
+
 public class CSVReadWrite {
 
     private static final String INPUT = "src/main/resources/taps.csv";

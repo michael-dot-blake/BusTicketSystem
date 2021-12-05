@@ -3,6 +3,14 @@ import com.opencsv.bean.CsvCustomBindByPosition;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author michaelblake 2021
+ *
+ * A class used to create Tap objects which are then used to create
+ * Trip objects. Implements Comparable for chronological sorting.
+ * Includes binding annotations for use with opencsv to bean functionality.
+ */
+
 public class Tap implements Comparable<Tap> {
 
     @CsvBindByPosition(position = 0)

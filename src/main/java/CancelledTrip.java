@@ -1,5 +1,13 @@
 import java.time.temporal.ChronoUnit;
 
+/**
+ * @author michaelblake 2021
+ *
+ * A class used to represent a Cancelled Trip, where a traveller has
+ * tappen on and tapped off at the same stop.
+ * The value of this trip is hardcoded in.
+ */
+
 public class CancelledTrip extends Trip {
 
     private Tap tapOff;

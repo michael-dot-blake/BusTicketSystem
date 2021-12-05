@@ -1,4 +1,11 @@
-import java.time.temporal.ChronoUnit;
+/**
+ * @author michaelblake 2021
+ *
+ * A class used to represent an Incomplete Trip, where a traveller has
+ * tapped on but not tapped off.
+ * It implements the calculateTripCost() method which returns a different value
+ * based on which stop the traveller tapped on at.
+ */
 
 public class IncompleteTrip extends Trip implements ITripCostCalculator {
 

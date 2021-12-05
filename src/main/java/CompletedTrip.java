@@ -1,5 +1,14 @@
 import java.time.temporal.ChronoUnit;
 
+/**
+ * @author michaelblake 2021
+ *
+ * A class used to represent a Completed Trip, where a traveller has
+ * tappen on at one Stop and tapped off at another.
+ * It implements the calculateTripCost() method which returns a different value
+ * based on which stop the traveller tapped on/off at.
+ */
+
 public class CompletedTrip extends Trip implements ITripCostCalculator {
 
     private Tap tapOff;
