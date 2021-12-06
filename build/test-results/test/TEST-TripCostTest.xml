@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripCostTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-12-06T04:16:49" hostname="192-168-1-100.tpgi.com.au" time="0.015">
+  <properties/>
+  <testcase name="Check that trip between stop1 and stop2 is priced correctly" classname="TripCostTest" time="0.012"/>
+  <testcase name="Check that trip between stop1 and stop3 is priced correctly" classname="TripCostTest" time="0.0"/>
+  <testcase name="Check that trip between stop2 and stop3 is priced correctly" classname="TripCostTest" time="0.001"/>
+  <testcase name="Check that a cancelled Trip is priced correctly" classname="TripCostTest" time="0.0"/>
+  <testcase name="Check that an incomplete Trip is priced correctly" classname="TripCostTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
