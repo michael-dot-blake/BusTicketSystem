@@ -1,7 +1,7 @@
 # Bus Ticketing System
 
-A prototype of a bus ticketing system which captures credit card taps on/off and charges. 
-All credit card numbers used were sourced from http://support.worldpay.com/support/kb/bg/testandgolive/tgl5103.html 
+A prototype of a bus ticketing system which captures credit card taps on/off and charges
+appropriately based on the distance of the trip. All credit card numbers used were sourced from: http://support.worldpay.com/support/kb/bg/testandgolive/tgl5103.html 
 and are safe for testing purposes.
 
 ## Getting Started
