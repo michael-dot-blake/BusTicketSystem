@@ -38,7 +38,7 @@ public class Driver {
                     completedTaps.put(cancel.getTapOn().getId(), cancel.getTapOn());
                     completedTaps.put(cancel.getTapOff().getId(), cancel.getTapOff());
 
-                    //if the next Tap is of type Tap off and the stop is different then the trip was Complete
+                    //if the next Tap is of type Tap off and the stop is different, then the trip was Complete
                 } else {
                     CompletedTrip complete = new CompletedTrip(activeTaps.get(t.getPan()), t);
                     finishedTrips.add(complete);
